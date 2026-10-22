@@ -61,6 +61,7 @@ jobs:
             --output reports/parity.json 2>&1 | tee reports/parity.log
 
       - name: Measure the interleaved paired baseline
+        if: always()
         run: |
           set -o pipefail
           python src/model-runtime/tools/vela2_bench.py \
